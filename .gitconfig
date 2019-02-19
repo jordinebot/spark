@@ -1,0 +1,51 @@
+[user]
+# This is Git's per-user configuration file.
+    name = Jordi Nebot
+    email = hola@jordinebot.cat
+[core]
+    excludesfile = ~/.gitignore
+[alias]
+    # (Add All) Stages all untracked and modified files
+    aa = add --all
+    # (Branch Delete) Delete local branch
+    bd = branch --delete
+    # (Branch Delete --Force) Delete local branch whatever its merged status is
+    bdf = branch -D
+    # (Branch Delete Remote) Removes the remote branch (assumes remote name is origin!)
+    bdr = push origin --delete
+    # (Branch Move) Rename current branch
+    bm = branch --move
+    # (Commit Ammend) Ammend last commit
+    ca = commit --amend
+    # (Create Branch) Create a new branch and check it out
+    cb = checkout -b
+    # (Commit with Message) Commits staged files with commit message
+    cm = commit -m
+    # (CheckOut) Checkout branch
+    co = checkout
+    # (List Aliases)
+    la = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+    # (Log Graph) Show git log as graph
+    lg = log --all --decorate --oneline --graph
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    # (Prune Origin) Remove all origin references in local repo for remotely deleted branches
+    po = remote prune origin
+    # (Push Track) Push branch and set upstream track
+    pt = push --set-upstream origin
+    # (REset) Undo last commit
+    re = reset --hard HEAD
+    # (Stash Apply) Apply a specific stash
+    sa = stash apply
+    # (Stash pUsh) Stash working directory changes with custom message
+    su = stash push --include-untracked -m
+    # (Stash pOp) Apply and drop stash
+    so = stash pop
+    # (Stash List) List the stashed changes stack
+    sl = stash list
+    # (Show Files) List files touched in commit
+    sf = diff-tree --name-only --no-commit-id -r
+    # (STatus) Show the status of the working tree
+    st = status
+    # (UNstage) Remove files from stage
+    un = reset

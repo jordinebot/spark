@@ -39,13 +39,6 @@
     brew install git
     ```
     
-1. Configure global settings
-
-    ```sh
-    git config --global user.name "Jordi Nebot"
-    git config --global user.email hola@jordinebot.cat
-    ```
-
 1. Clone **spark**
 
     ```sh

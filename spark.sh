@@ -21,9 +21,11 @@ then
     chsh -s $(which zsh)
 fi
 
-# Link config files
+# Link shell config files
 
 ln -sf ~/.spark/.zshrc ~/.zshrc
 ln -sf ~/.spark/.zimrc ~/.zimrc
 ln -sf ~/.spark/.zlogin ~/.zlogin
 
+# Link git config
+ln -sf ~/spark/.gitconfig ~/.gitconfig
