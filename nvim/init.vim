@@ -65,28 +65,63 @@ endif
 " Specify a directory for plugins
 call plug#begin('~/.spark/nvim/plugged')
 
-" Installed plugins
+" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'airblade/vim-gitgutter'
-Plug 'drewtempelmeyer/palenight.vim'
+
+" Fuzzy file finding for neovim
 Plug 'cloudhead/neovim-fuzzy'
+
+" Color highlighting theme
+Plug 'morhetz/gruvbox'
+
+" EditorConfig plugin for Vim
 Plug 'editorconfig/editorconfig-vim'
+
+" Default snippets for UltiSnips and others
 Plug 'honza/vim-snippets'
-Plug 'jelera/vim-javascript-syntax'
+
+" Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
+
+" A simple, easy-to-use Vim alignment plugin.
 Plug 'junegunn/vim-easy-align'
+
+" Text objects for the current line
 Plug 'kana/vim-textobj-line'
+
+" Create your own text objects (required by kana/vim-textobj-line)
 Plug 'kana/vim-textobj-user'
+
+" Provides support for expanding abbreviations
 Plug 'mattn/emmet-vim'
-Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
+
+" Vim plugin for the_silver_searcher
 Plug 'Numkil/ag.nvim'
+
+" Syntax Highlight for Vue.js components
+Plug 'posva/vim-vue'
+
+" A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
+
+" Asynchronous completion framework for neovim
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" The ultimate snippet solution for Vim
 Plug 'sirver/ultisnips'
+
+" Comment stuff out
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
+
+" Quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
+
+" Status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
+
+" Asynchronous linting/fixing for Vim
 Plug 'w0rp/ale'
+
 
 " Initialize plugin system
 call plug#end()
@@ -144,7 +179,8 @@ nnoremap Q <Nop>
 " -----------------------------------------------
 " THEME AND VISUAL SETTINGS
 " -----------------------------------------------
-colorscheme palenight
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme gruvbox
 if (has("termguicolors"))
     set termguicolors
 endif
