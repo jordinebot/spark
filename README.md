@@ -1,4 +1,5 @@
 # spark
+**Spark** is a script to setup the minimal configuration that I want in my OSX.
 
 ## Basics
 
@@ -18,6 +19,7 @@
     ```sh
     brew cask install bitwarden tresorit nordvpn
     ```
+
     Consider downloading these critical packages from owner's website:
     
     * https://bitwarden.com/#download
