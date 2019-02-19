@@ -34,24 +34,28 @@ ln -sf ~/.spark/.gitconfig ~/.gitconfig
 source ~/.spark/aliases
 
 # Install NeoVim
-brew install neovim
-mkdir -p ~/.config
-ln -s ~/.spark/nvim ~/.config/nvim
+brew list --versions neovim || (\
+    brew install neovim && \
+    mkdir -p ~/.config  && \
+    ln -sf ~/.spark/nvim ~/.config/nvim)
 
 # Install NeoVim plugins requirements
 
 ## Ag
-brew install the_silver_searcher
+brew list --versions the_silver_searcher || \
+    brew install the_silver_searcher
 
 ## Fuzzy Search
-brew install fzy
+brew list --versions fzy || \
+    brew install fzy
 
 ## Deoplete
 pip3 install --user --upgrade pynvim
 
 # Install the Fuck
-brew install thefuck
+brew list --versions thefuck || \
+    brew install thefuck
 
-# Source config files
-source ~/.zshrc
-source ~/.zimrc
+# Install NVM (to handle multiple Node.js installations)
+brew list --versions nvm || \
+    brew install nvm

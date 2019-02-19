@@ -13,6 +13,9 @@ bindkey -v
 # Enable the fuck
 eval $(thefuck --alias)
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
 # Export path
 export PATH=/usr/local/bin:$PATH
 
