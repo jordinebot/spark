@@ -9,7 +9,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 if [ ! -d ${ZDOTDIR:-${HOME}}/.zim ]
 then
     git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
-    
+
     setopt EXTENDED_GLOB
     for template_file ( ${ZDOTDIR:-${HOME}}/.zim/templates/* ); do
       user_file="${ZDOTDIR:-${HOME}}/.${template_file:t}"
@@ -28,4 +28,20 @@ ln -sf ~/.spark/.zimrc ~/.zimrc
 ln -sf ~/.spark/.zlogin ~/.zlogin
 
 # Link git config
-ln -sf ~/spark/.gitconfig ~/.gitconfig
+ln -sf ~/.spark/.gitconfig ~/.gitconfig
+
+# Install NeoVim
+brew install neovim
+mkdir -p ~/.config
+ln -sF ~/.spark/nvim ~/.config/nvim
+
+# Install NeoVim plugins requirements
+
+## Ag
+brew install the_silver_searcher
+
+## Fuzzy Search
+brew install fzy
+
+## Deoplete
+pip3 install --user --upgrade pynvim
