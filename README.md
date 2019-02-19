@@ -64,10 +64,11 @@
     brew cask install iterm2
     ```
 
-## Spark!
-1. Light the fire
+## Run script
+1. Spark!
 
     ```sh
+    chmod +x ~/.spark/spark.sh
     ~/.spark/spark.sh
     ```
     
