@@ -30,6 +30,9 @@ ln -sf ~/.spark/.zlogin ~/.zlogin
 # Link git config
 ln -sf ~/.spark/.gitconfig ~/.gitconfig
 
+# Source aliases
+source ~/.spark/aliases
+
 # Install NeoVim
 brew install neovim
 mkdir -p ~/.config
