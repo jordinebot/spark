@@ -20,3 +20,10 @@ then
     source ${ZDOTDIR:-${HOME}}/.zlogin
     chsh -s $(which zsh)
 fi
+
+# Link config files
+
+ln -sf ~/.spark/.zshrc ~/.zshrc
+ln -sf ~/.spark/.zimrc ~/.zimrc
+ln -sf ~/.spark/.zlogin ~/.zlogin
+
