@@ -36,7 +36,7 @@ source ~/.spark/aliases
 # Install NeoVim
 brew install neovim
 mkdir -p ~/.config
-ln -sF ~/.spark/nvim ~/.config/nvim
+ln -s ~/.spark/nvim ~/.config/nvim
 
 # Install NeoVim plugins requirements
 
