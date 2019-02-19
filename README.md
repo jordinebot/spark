@@ -18,6 +18,12 @@
     ```sh
     brew cask install bitwarden tresorit nordvpn
     ```
+    Consider downloading these critical packages from owner's website:
+    
+    * https://bitwarden.com/#download
+    * https://tresorit.com/download/mac
+    * https://nordvpn.com/download/
+    
     
 1. Set key permissions
 
@@ -45,13 +51,13 @@
     git clone git@github.com:jordinebot/spark.git ~/.spark
     ```
     
-1. Install **[zsh](http://zsh.sourceforge.net)**
+1. Install latest **[zsh](http://zsh.sourceforge.net)**
 
     ```sh
     brew install zsh
     ```
 
-1. Install **iTerm**
+1. Install **[iTerm](https://iterm2.com/)**
 
     ```sh
     brew cask install iterm2
