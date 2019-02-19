@@ -10,5 +10,10 @@ setopt autocd
 # Use vi keybindings in CLI
 bindkey -v
 
+# Enable the fuck
+eval $(thefuck --alias)
+
 # Export path
 export PATH=/usr/local/bin:$PATH
+
+

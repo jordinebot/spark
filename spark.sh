@@ -45,3 +45,10 @@ brew install fzy
 
 ## Deoplete
 pip3 install --user --upgrade pynvim
+
+# Install the Fuck
+brew install thefuck
+
+# Source config files
+source ~/.zshrc
+source ~/.zimrc
