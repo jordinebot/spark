@@ -98,8 +98,14 @@ Plug 'mattn/emmet-vim'
 " Vim plugin for the_silver_searcher
 Plug 'Numkil/ag.nvim'
 
+" Vastly improved Javascript indentation and syntax support in Vim
+Plug 'pangloss/vim-javascript'
+
 " Syntax Highlight for Vue.js components
 Plug 'posva/vim-vue'
+
+" Wrapper for prettier, pre-configured with custom default prettier settings
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
