@@ -1,3 +1,6 @@
 # Alternatives to nvim
 alias v="nvim"
 alias neovim="nvim"
+
+# Environment
+alias spark="cd ~/.spark"

@@ -46,9 +46,6 @@ brew list --versions the_silver_searcher || \
 brew list --versions fzy || \
     brew install fzy
 
-## Deoplete
-pip3 install --user --upgrade pynvim
-
 # Install the Fuck
 brew list --versions thefuck || \
     brew install thefuck

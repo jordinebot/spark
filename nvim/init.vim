@@ -5,7 +5,7 @@
 " Set nvim interface language to en_US
 language en_US
 
-" Enable syntax highlight with Monokai Theme
+" Enable syntax highlight
 syntax enable
 
 " Show line numbers
@@ -72,7 +72,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'cloudhead/neovim-fuzzy'
 
 " Color highlighting theme
-Plug 'morhetz/gruvbox'
+Plug 'patstockwell/vim-monokai-tasty'
 
 " EditorConfig plugin for Vim
 Plug 'editorconfig/editorconfig-vim'
@@ -98,7 +98,14 @@ Plug 'mattn/emmet-vim'
 " Vim plugin for the_silver_searcher
 Plug 'Numkil/ag.nvim'
 
-" Vastly improved Javascript indentation and syntax support in Vim
+" Syntax highlighting and indenting for JSX.
+Plug 'mxw/vim-jsx'
+
+" Intellisense engine for vim8 & neovim, full language server protocol support
+" as VSCode
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
+
+"Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'
 
 " Syntax Highlight for Vue.js components
@@ -110,8 +117,9 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
-" Asynchronous completion framework for neovim
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Vim Syntax for SCSS (Sassy CSS)
+Plug 'hail2u/vim-css3-syntax'
+Plug 'ObserverOfTime/scss.vim', {'for': 'scss'}
 
 " The ultimate snippet solution for Vim
 Plug 'sirver/ultisnips'
@@ -140,7 +148,7 @@ call plug#end()
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Enable deoplete (for local autocompletion) on startup
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
@@ -164,7 +172,13 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
-" -----------------------------------------------
+" Prettier
+"
+" Single quotes over double quotes
+" Prettier default: false
+let g:prettier#config#single_quote = 'true'
+
+"" -----------------------------------------------
 " ADVANCED SETTINGS
 " -----------------------------------------------
 
@@ -186,7 +200,8 @@ nnoremap Q <Nop>
 " THEME AND VISUAL SETTINGS
 " -----------------------------------------------
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme gruvbox
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
 if (has("termguicolors"))
     set termguicolors
 endif
@@ -214,8 +229,7 @@ nnoremap <leader>i mzgg=G`z<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " Save on leaving Insert mode
-" Currently disabled for caution on YourDictionary.com
-" inoremap <Esc> <Esc>:w<CR>
+inoremap <Esc> <Esc>:w<CR>
 
 " Close current buffer without losing split
 " http://stackoverflow.com/a/4468491/1534704
