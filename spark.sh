@@ -55,3 +55,5 @@ brew list --versions nvm || \
     brew install nvm
 
 mkdir -p ~/.nvm
+
+mkdir -p ~/Code

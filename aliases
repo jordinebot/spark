@@ -4,3 +4,4 @@ alias neovim="nvim"
 
 # Environment
 alias spark="cd ~/.spark"
+alias C="cd ~/Code"
