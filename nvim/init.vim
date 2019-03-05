@@ -52,6 +52,60 @@ set nobackup
 set noswapfile
 
 " -----------------------------------------------
+" MY KEYBINDINGS
+" -----------------------------------------------
+
+" Set <Leader> key
+let mapleader=","
+
+" Edit/reload vimrc
+nmap <Leader>ev :e $MYVIMRC<CR>
+nmap <Leader>sv :so $MYVIMRC<CR>
+
+" better Esc
+inoremap jj <Esc>j
+inoremap kk <Esc>k
+
+
+" Reindent
+nnoremap <leader>i mzgg=G`z<CR>
+
+" Toggle NERDtree
+map <C-n> :NERDTreeToggle<CR>
+
+" Save on leaving Insert mode
+inoremap <Esc> <Esc>:w<CR>
+
+" Close current buffer without losing split
+" http://stackoverflow.com/a/4468491/1534704
+nnoremap <C-c> :bp\|bd #<CR>
+
+" Close all buffers but current
+nnoremap <Leader>co :%bd<bar>e #<bar>bd #<CR><CR>
+
+" Abbreviations
+cnoreabbrev vr vertical resize
+cnoreabbrev ag Ag
+cnoreabbrev W w
+
+" Folding
+nnoremap <Space> za
+vnoremap <Space> za
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" Sort inside brackets
+nnoremap siB :?{?+,/}/-sort<CR>
+nnoremap si{ :?{?+,/}/-sort<CR>
+nnoremap si( :?(?+,/)/-sort<CR>
+
+" Enable/Disable spell check for current buffer
+" ]s next, [s previous, z= suggestions, zg add word
+nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
+nnoremap <leader>O :setlocal nospell<CR>
+
+" -----------------------------------------------
 " MY PLUGINS
 " -----------------------------------------------
 
@@ -205,60 +259,6 @@ colorscheme vim-monokai-tasty
 if (has("termguicolors"))
     set termguicolors
 endif
-
-" -----------------------------------------------
-" MY KEYBINDINGS
-" -----------------------------------------------
-
-" Set <Leader> key
-let mapleader=","
-
-" Edit/reload vimrc
-nmap <Leader>ev :e $MYVIMRC<CR>
-nmap <Leader>sv :so $MYVIMRC<CR>
-
-" better Esc
-inoremap jj <Esc>j
-inoremap kk <Esc>k
-
-
-" Reindent
-nnoremap <leader>i mzgg=G`z<CR>
-
-" Toggle NERDtree
-map <C-n> :NERDTreeToggle<CR>
-
-" Save on leaving Insert mode
-inoremap <Esc> <Esc>:w<CR>
-
-" Close current buffer without losing split
-" http://stackoverflow.com/a/4468491/1534704
-nnoremap <C-c> :bp\|bd #<CR>
-
-" Close all buffers but current
-nnoremap <Leader>co :%bd<bar>e #<bar>bd #<CR><CR>
-
-" Abbreviations
-cnoreabbrev vr vertical resize
-cnoreabbrev ag Ag
-cnoreabbrev W w
-
-" Folding
-nnoremap <Space> za
-vnoremap <Space> za
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
-" Sort inside brackets
-nnoremap siB :?{?+,/}/-sort<CR>
-nnoremap si{ :?{?+,/}/-sort<CR>
-nnoremap si( :?(?+,/)/-sort<CR>
-
-" Enable/Disable spell check for current buffer
-" ]s next, [s previous, z= suggestions, zg add word
-nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
-nnoremap <leader>O :setlocal nospell<CR>
 
 " -----------------------------------------------
 " AUTOMATIC ACTIONS
