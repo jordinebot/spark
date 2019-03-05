@@ -53,3 +53,5 @@ brew list --versions thefuck || \
 # Install NVM (to handle multiple Node.js installations)
 brew list --versions nvm || \
     brew install nvm
+
+mkdir -p ~/.nvm
