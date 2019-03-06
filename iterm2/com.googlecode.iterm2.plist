@@ -54,9 +54,9 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2009 524 918 452 1920 0 1920 1200 </string>
+	<string>2009 558 918 452 1920 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 0 570 452 1920 0 1920 1200 </string>
+	<string>993 0 927 1178 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1221,7 +1221,7 @@
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
-			<integer>-2</integer>
+			<integer>1</integer>
 			<key>Scrollback Lines</key>
 			<integer>1000</integer>
 			<key>Selected Text Color</key>
@@ -1288,6 +1288,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>573405238.16539598</real>
 	<key>PointerActions</key>
@@ -1334,7 +1336,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-05T15:15:08Z</date>
+	<date>2019-03-06T15:15:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
