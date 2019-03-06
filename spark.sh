@@ -28,7 +28,8 @@ ln -sf ~/.spark/.zimrc ~/.zimrc
 ln -sf ~/.spark/.zlogin ~/.zlogin
 
 # Link git config
-ln -sf ~/.spark/.gitconfig ~/.gitconfig
+ln -sf ~/.spark/.gitconfig_global ~/.gitconfig
+ln -sf ~/.spark/.gitignore_global ~/.gitignore
 
 # Install NeoVim
 brew list --versions neovim || (\
