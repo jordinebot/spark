@@ -1,7 +1,7 @@
 [user]
 # This is Git's per-user configuration file.
     name = Jordi Nebot
-    email = hola@jordinebot.cat
+    email = jordi.nebot@king.com
 [core]
     excludesfile = ~/.gitignore
 [alias]

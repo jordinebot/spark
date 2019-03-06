@@ -73,3 +73,6 @@
     ~/.spark/spark.sh
     ```
     
+# CoC Extensions
+
+:CocInstall coc-html coc-css coc-json coc-highlight

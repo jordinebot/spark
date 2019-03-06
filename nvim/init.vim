@@ -21,9 +21,9 @@ set cursorline
 set colorcolumn=80,120
 
 " Tabs & Indent
-set tabstop=4       " spaces per TAB
-set shiftwidth=4    " spaces per TAB for autoindent
-set softtabstop=4   " spaces per TAB when editing
+set tabstop=2       " spaces per TAB
+set shiftwidth=2    " spaces per TAB for autoindent
+set softtabstop=2   " spaces per TAB when editing
 set expandtab       " TAB with spaces
 set autoindent
 set copyindent      " copy indent from the previous line
@@ -190,6 +190,9 @@ Plug 'vim-airline/vim-airline'
 " Asynchronous linting/fixing for Vim
 Plug 'w0rp/ale'
 
+" Typescript syntax files for Vim
+Plug 'leafgarland/typescript-vim'
+
 
 " Initialize plugin system
 call plug#end()
@@ -231,6 +234,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 " Single quotes over double quotes
 " Prettier default: false
 let g:prettier#config#single_quote = 'true'
+
+" coc.nvim integration with airline
+"if you want to disable auto detect, comment out those two lines
+"let g:airline#extensions#disable_rtp_load = 1
+"let g:airline_extensions = ['branch', 'hunks', 'coc']
+
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 "" -----------------------------------------------
 " ADVANCED SETTINGS
