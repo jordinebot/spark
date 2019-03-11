@@ -1,2 +1,18 @@
+# --------
+# OS Files
+# --------
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+
+# -------------
+# Project Files
+# -------------
 .nvmrc
+node_modules
+bower_components
 
