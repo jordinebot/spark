@@ -230,10 +230,16 @@ let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 " Prettier
+" https://github.com/prettier/vim-prettier/issues/146#issuecomment-427082716
+let g:prettier#config#config_precedence = 'file-override'
 "
 " Single quotes over double quotes
 " Prettier default: false
 let g:prettier#config#single_quote = 'true'
+
+" max line length that prettier will wrap on
+" Prettier default: 80
+let g:prettier#config#print_width = 120
 
 " coc.nvim integration with airline
 "if you want to disable auto detect, comment out those two lines
