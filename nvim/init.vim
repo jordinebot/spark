@@ -131,9 +131,6 @@ Plug 'patstockwell/vim-monokai-tasty'
 " EditorConfig plugin for Vim
 Plug 'editorconfig/editorconfig-vim'
 
-" Default snippets for UltiSnips and others
-Plug 'honza/vim-snippets'
-
 " Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
 
@@ -177,6 +174,9 @@ Plug 'ObserverOfTime/scss.vim', {'for': 'scss'}
 
 " The ultimate snippet solution for Vim
 Plug 'sirver/ultisnips'
+
+" Default snippets for UltiSnips and others
+Plug 'honza/vim-snippets'
 
 " Comment stuff out
 Plug 'tpope/vim-commentary'
@@ -225,7 +225,7 @@ nnoremap <C-p> :FuzzyOpen<CR>
 
 " Ultisnips
 let g:UltiSnipsSnippetsDir='~/.spark/nvim/ultisnips'
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
