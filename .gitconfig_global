@@ -13,6 +13,10 @@
     bdf = branch -D
     # (Branch Delete Remote) Removes the remote branch (assumes remote name is origin!)
     bdr = push origin --delete
+    # (Branch List) List all local branches
+    bl = branch
+    # (Branch List All) List all local and remote branches
+    bla = branch -a
     # (Branch Move) Rename current branch
     bm = branch --move
     # (Commit Ammend) Ammend last commit
