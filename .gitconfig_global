@@ -23,6 +23,8 @@
     ca = commit --amend
     # (Create Branch) Create a new branch and check it out
     cb = checkout -b
+    # (CLear) Discard all changes in working tree
+    cl = checkout -- .
     # (Commit with Message) Commits staged files with commit message
     cm = commit -m
     # (CheckOut) Checkout branch
