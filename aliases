@@ -5,3 +5,6 @@ alias neovim="nvim"
 # Environment
 alias spark="cd ~/.spark"
 alias C="cd ~/Code"
+
+# Work Projects
+alias CA="cd ~/Code/CrashAnalytics/crashanalytics/ui"
