@@ -241,6 +241,10 @@ let g:prettier#config#single_quote = 'true'
 " Prettier default: 80
 let g:prettier#config#print_width = 120
 
+" none|es5|all
+" Prettier default: none
+let g:prettier#config#trailing_comma = 'none'
+
 " coc.nvim integration with airline
 "if you want to disable auto detect, comment out those two lines
 "let g:airline#extensions#disable_rtp_load = 1
