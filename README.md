@@ -75,4 +75,4 @@
     
 # CoC Extensions
 
-:CocInstall coc-html coc-css coc-json coc-highlight
+    :CocInstall coc-html coc-css coc-json coc-highlight
