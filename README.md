@@ -30,7 +30,7 @@
 1. Set key permissions
 
     ```sh
-    chmod 700 ~/.ssh && chmod 644 ~/.ssh/* && chmod 600 ~/.ssh/id_rsa ~/.ssh/*.pem
+    chmod 700 ~/.ssh && chmod 644 ~/.ssh/* && chmod 400 ~/.ssh/id_rsa ~/.ssh/*.pem
     ```
 
 1. Add keys to `ssh-agent` (`-K` to store passphrase into System's Keychain)
@@ -75,4 +75,4 @@
     
 # CoC Extensions
 
-:CocInstall coc-html coc-css coc-json coc-highlight
+    :CocInstall coc-html coc-css coc-json coc-highlight
