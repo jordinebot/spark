@@ -20,7 +20,7 @@ set cursorline
 " Show ruler on columns 80 & 120
 set colorcolumn=80,120
 
-" Tabs & Indent
+" Default Tabs & Indent
 set tabstop=2       " spaces per TAB
 set shiftwidth=2    " spaces per TAB for autoindent
 set softtabstop=2   " spaces per TAB when editing
@@ -193,6 +193,9 @@ Plug 'w0rp/ale'
 " Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
 
+"Vim script for automatically detecting indent settings
+Plug 'ciaranm/detectindent'
+
 
 " Initialize plugin system
 call plug#end()
@@ -298,6 +301,9 @@ au BufRead,BufNewFile *.md,*.wiki setlocal formatoptions+=t
 " Trigger autoread when changing buffers or coming back to vim.
 " Useful after `git checkout --` on external terminal.
 au FocusGained,BufEnter * :silent! !
+
+" Auto detect indentation when opening a new buffer
+autocmd BufReadPost * :DetectIndent
 
 " -----------------------------------------------
 " TEXT EDITING
