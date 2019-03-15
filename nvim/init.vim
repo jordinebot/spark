@@ -51,59 +51,6 @@ set splitright          " Vertical split to right of current.
 set nobackup
 set noswapfile
 
-" -----------------------------------------------
-" MY KEYBINDINGS
-" -----------------------------------------------
-
-" Set <Leader> key
-let mapleader=","
-
-" Edit/reload vimrc
-nmap <Leader>ev :e $MYVIMRC<CR>
-nmap <Leader>sv :so $MYVIMRC<CR>
-
-" better Esc
-inoremap jj <Esc>j
-inoremap kk <Esc>k
-
-
-" Reindent
-nnoremap <leader>i mzgg=G`z<CR>
-
-" Toggle NERDtree
-map <C-n> :NERDTreeToggle<CR>
-
-" Save on leaving Insert mode
-inoremap <Esc> <Esc>:w<CR>
-
-" Close current buffer without losing split
-" http://stackoverflow.com/a/4468491/1534704
-nnoremap <C-c> :bp\|bd #<CR>
-
-" Close all buffers but current
-nnoremap <Leader>co :%bd<bar>e #<bar>bd #<CR><CR>
-
-" Abbreviations
-cnoreabbrev vr vertical resize
-cnoreabbrev ag Ag
-cnoreabbrev W w
-
-" Folding
-nnoremap <Space> za
-vnoremap <Space> za
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
-" Sort inside brackets
-nnoremap siB :?{?+,/}/-sort<CR>
-nnoremap si{ :?{?+,/}/-sort<CR>
-nnoremap si( :?(?+,/)/-sort<CR>
-
-" Enable/Disable spell check for current buffer
-" ]s next, [s previous, z= suggestions, zg add word
-nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
-nnoremap <leader>O :setlocal nospell<CR>
 
 " -----------------------------------------------
 " MY PLUGINS
@@ -162,9 +109,6 @@ Plug 'pangloss/vim-javascript'
 " Syntax Highlight for Vue.js components
 Plug 'posva/vim-vue'
 
-" Wrapper for prettier, pre-configured with custom default prettier settings
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
@@ -196,9 +140,66 @@ Plug 'leafgarland/typescript-vim'
 "Vim script for automatically detecting indent settings
 Plug 'ciaranm/detectindent'
 
+"A (Neo)vim plugin for formatting code.
+Plug 'sbdchd/neoformat'
 
 " Initialize plugin system
 call plug#end()
+
+
+" -----------------------------------------------
+" MY KEYBINDINGS
+" -----------------------------------------------
+
+" Set <Leader> key
+let mapleader=","
+
+" Edit/reload vimrc
+nmap <Leader>ev :e $MYVIMRC<CR>
+nmap <Leader>sv :so $MYVIMRC<CR>
+
+" better Esc
+inoremap jj <Esc>j
+inoremap kk <Esc>k
+
+" Reindent
+nnoremap <leader>i mzgg=G`z<CR>
+
+" Toggle NERDtree
+map <C-n> :NERDTreeToggle<CR>
+
+" Save on leaving Insert mode
+inoremap <Esc> <Esc>:w<CR>
+
+" Close current buffer without losing split
+" http://stackoverflow.com/a/4468491/1534704
+nnoremap <C-c> :bp\|bd #<CR>
+
+" Close all buffers but current
+nnoremap <Leader>co :%bd<bar>e #<bar>bd #<CR><CR>
+
+" Abbreviations
+cnoreabbrev vr vertical resize
+cnoreabbrev ag Ag
+cnoreabbrev W w
+
+" Folding
+nnoremap <Space> za
+vnoremap <Space> za
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" Sort inside brackets
+nnoremap siB :?{?+,/}/-sort<CR>
+nnoremap si{ :?{?+,/}/-sort<CR>
+nnoremap si( :?(?+,/)/-sort<CR>
+
+" Enable/Disable spell check for current buffer
+" ]s next, [s previous, z= suggestions, zg add word
+nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
+nnoremap <leader>O :setlocal nospell<CR>
+
 
 " -----------------------------------------------
 " PLUGIN SETTINGS
@@ -232,22 +233,6 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
-" Prettier
-" https://github.com/prettier/vim-prettier/issues/146#issuecomment-427082716
-let g:prettier#config#config_precedence = 'file-override'
-"
-" Single quotes over double quotes
-" Prettier default: false
-let g:prettier#config#single_quote = 'true'
-
-" max line length that prettier will wrap on
-" Prettier default: 80
-let g:prettier#config#print_width = 120
-
-" none|es5|all
-" Prettier default: none
-let g:prettier#config#trailing_comma = 'none'
-
 " coc.nvim integration with airline
 "if you want to disable auto detect, comment out those two lines
 "let g:airline#extensions#disable_rtp_load = 1
@@ -256,7 +241,11 @@ let g:prettier#config#trailing_comma = 'none'
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
-"" -----------------------------------------------
+" Use Prettier keybinding for Neoformat
+nnoremap <Leader>p :Neoformat<CR>
+
+
+" -----------------------------------------------
 " ADVANCED SETTINGS
 " -----------------------------------------------
 
@@ -274,6 +263,7 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " https://vi.stackexchange.com/a/2692/11899
 nnoremap Q <Nop>
 
+
 " -----------------------------------------------
 " THEME AND VISUAL SETTINGS
 " -----------------------------------------------
@@ -284,6 +274,7 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
+
 " -----------------------------------------------
 " AUTOMATIC ACTIONS
 " -----------------------------------------------
@@ -292,7 +283,6 @@ endif
 " https://stackoverflow.com/a/10410590/1534704
 let exceptions = ['markdown']
 autocmd BufWritePre * if index(exceptions, &ft) < 0 | :%s/\s\+$//e
-
 
 " Wrap .md files to 120 cols
 au BufRead,BufNewFile *.md,*.wiki setlocal textwidth=120
@@ -304,6 +294,7 @@ au FocusGained,BufEnter * :silent! !
 
 " Auto detect indentation when opening a new buffer
 autocmd BufReadPost * :DetectIndent
+
 
 " -----------------------------------------------
 " TEXT EDITING
@@ -322,6 +313,7 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 " Visual mode
 vnoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>gv=gv
+
 
 " -----------------------------------------------
 " BUFFER & SPLIT NAVIGATION
