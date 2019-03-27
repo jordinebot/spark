@@ -53,5 +53,9 @@
     sf = diff-tree --name-only --no-commit-id -r
     # (STatus) Show the status of the working tree
     st = status
+    # (Tag List) List all tags
+    tl = tag --list
+    # (Tag Push) Push all local Tags
+    tp = push --tags
     # (UNstage) Remove files from stage
     un = reset
