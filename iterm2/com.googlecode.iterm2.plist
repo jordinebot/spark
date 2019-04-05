@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -53,10 +55,12 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>2570 588 620 392 1920 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1950 464 918 452 1920 0 1920 1200 </string>
+	<string>1978 392 918 452 1920 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 0 570 452 1920 0 1920 1200 </string>
+	<string>2815 0 1025 1200 1920 0 1920 1200 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -819,7 +823,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>9.1295249048223344</real>
+			<real>3.7064740640862945</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1249,7 +1253,7 @@
 			<key>Silence Bell</key>
 			<false/>
 			<key>Space</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -1257,7 +1261,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.57882891814720816</real>
+			<real>0.37115720177664979</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1336,13 +1340,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-13T14:27:19Z</date>
+	<date>2019-03-27T11:56:25Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>SuppressRestartAnnouncement</key>
