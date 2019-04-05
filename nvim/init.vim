@@ -136,6 +136,7 @@ Plug 'w0rp/ale'
 
 " Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 "Vim script for automatically detecting indent settings
 Plug 'ciaranm/detectindent'
@@ -243,6 +244,9 @@ let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_
 
 " Use Prettier keybinding for Neoformat
 nnoremap <Leader>p :Neoformat<CR>
+
+" Set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 
 " -----------------------------------------------
