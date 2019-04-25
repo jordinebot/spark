@@ -114,7 +114,7 @@ Plug 'scrooloose/nerdtree'
 
 " Vim Syntax for SCSS (Sassy CSS)
 Plug 'hail2u/vim-css3-syntax'
-Plug 'ObserverOfTime/scss.vim', {'for': 'scss'}
+Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 
 " The ultimate snippet solution for Vim
 Plug 'sirver/ultisnips'
@@ -140,9 +140,6 @@ Plug 'peitalin/vim-jsx-typescript'
 
 "Vim script for automatically detecting indent settings
 Plug 'ciaranm/detectindent'
-
-"A (Neo)vim plugin for formatting code.
-Plug 'sbdchd/neoformat'
 
 " Initialize plugin system
 call plug#end()
@@ -242,11 +239,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
-" Use Prettier keybinding for Neoformat
-nnoremap <Leader>p :Neoformat<CR>
+" Use Prettier keybinding for Code formatter
+nnoremap <Leader>p :ALEFix<CR>
 
 " Set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 
 " -----------------------------------------------
@@ -350,3 +347,29 @@ map <right> <C-w><right>
 " Increase and decrease vertical splits width
 nnoremap <A-+> :vertical resize +10<CR>
 nnoremap <A--> :vertical resize -10<CR>
+
+
+" -----------------------------------------------
+" FILE FORMAT OPTIONS
+" -----------------------------------------------
+
+let g:ale_linters = {
+      \  'javascript': ['eslint'],
+            \ }
+
+let g:ale_fixers = {
+      \  'javascript': ['prettier', 'eslint'],
+      \  'jsx': ['prettier', 'eslint'],
+      \  'flow': ['prettier'],
+      \  'typescript': ['prettier'],
+      \  'css': ['prettier'],
+      \  'less': ['prettier'],
+      \  'scss': ['prettier'],
+      \  'json': ['prettier'],
+      \  'graphql': ['prettier'],
+      \  'markdown': ['prettier'],
+            \ }
+
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --print-width 120'
+
+let g:ale_fix_on_save = 1
