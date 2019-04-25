@@ -355,7 +355,7 @@ nnoremap <A--> :vertical resize -10<CR>
 
 let g:ale_linters = {
       \  'javascript': ['eslint'],
-            \ }
+\ }
 
 let g:ale_fixers = {
       \  'javascript': ['prettier', 'eslint'],
@@ -368,8 +368,8 @@ let g:ale_fixers = {
       \  'json': ['prettier'],
       \  'graphql': ['prettier'],
       \  'markdown': ['prettier'],
-            \ }
+\ }
 
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --print-width 120'
+let g:ale_javascript_prettier_options = '--single-quote --print-width 120'
 
 let g:ale_fix_on_save = 1
