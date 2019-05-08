@@ -51,6 +51,10 @@ set splitright          " Vertical split to right of current.
 set nobackup
 set noswapfile
 
+" Set + as the default register so that vim yanks and pastes to/from
+" system's clipboard by default
+set clipboard=unnamedplus
+
 
 " -----------------------------------------------
 " MY PLUGINS
@@ -140,6 +144,9 @@ Plug 'peitalin/vim-jsx-typescript'
 
 "Vim script for automatically detecting indent settings
 Plug 'ciaranm/detectindent'
+
+" Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
+Plug 'udalov/kotlin-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -358,18 +365,19 @@ let g:ale_linters = {
 \ }
 
 let g:ale_fixers = {
-      \  'javascript': ['prettier', 'eslint'],
-      \  'jsx': ['prettier', 'eslint'],
-      \  'flow': ['prettier'],
-      \  'typescript': ['prettier'],
       \  'css': ['prettier'],
-      \  'less': ['prettier'],
-      \  'scss': ['prettier'],
-      \  'json': ['prettier'],
+      \  'flow': ['prettier'],
       \  'graphql': ['prettier'],
+      \  'html': ['prettier'],
+      \  'javascript': ['prettier', 'eslint'],
+      \  'json': ['prettier'],
+      \  'jsx': ['prettier', 'eslint'],
+      \  'less': ['prettier'],
       \  'markdown': ['prettier'],
+      \  'scss': ['prettier'],
+      \  'typescript': ['prettier'],
 \ }
 
 let g:ale_javascript_prettier_options = '--single-quote --print-width 120'
 
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0

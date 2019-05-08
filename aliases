@@ -2,6 +2,9 @@
 alias v="nvim"
 alias neovim="nvim"
 
+# Git composed aliases
+alias pull="git fetch && git pull"
+
 # Environment
 alias spark="cd ~/.spark"
 alias C="cd ~/Code"
