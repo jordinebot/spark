@@ -303,6 +303,9 @@ au FocusGained,BufEnter * :silent! !
 " Auto detect indentation when opening a new buffer
 autocmd BufReadPost * :DetectIndent
 
+" Workaround 'Insert <Paste>' bug in Neovim
+" See https://github.com/neovim/neovim/issues/7994#issuecomment-388296360
+au InsertLeave * set nopaste
 
 " -----------------------------------------------
 " TEXT EDITING
