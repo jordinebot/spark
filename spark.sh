@@ -35,7 +35,8 @@ ln -sf ~/.spark/.gitignore_global ~/.gitignore
 brew list --versions neovim || (\
     brew install neovim && \
     mkdir -p ~/.config  && \
-    ln -sf ~/.spark/nvim ~/.config/nvim)
+    ln -sf ~/.spark/nvim ~/.config/nvim && \
+    ln -s ~/.spark/coc ~/.config/coc)
 
 # Install NeoVim plugins requirements
 

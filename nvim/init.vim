@@ -105,7 +105,7 @@ Plug 'mxw/vim-jsx'
 
 " Intellisense engine for vim8 & neovim, full language server protocol support
 " as VSCode
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 "Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'
@@ -119,9 +119,6 @@ Plug 'scrooloose/nerdtree'
 " Vim Syntax for SCSS (Sassy CSS)
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
-
-" The ultimate snippet solution for Vim
-Plug 'sirver/ultisnips'
 
 " Default snippets for UltiSnips and others
 Plug 'honza/vim-snippets'
@@ -231,12 +228,6 @@ nmap ga <Plug>(EasyAlign)
 
 " Use fzy as CtrlP
 nnoremap <C-p> :FuzzyOpen<CR>
-
-" Ultisnips
-let g:UltiSnipsSnippetsDir='~/.spark/nvim/ultisnips'
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 " coc.nvim integration with airline
 "if you want to disable auto detect, comment out those two lines
