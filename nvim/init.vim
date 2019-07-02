@@ -180,6 +180,15 @@ nnoremap <C-c> :bp\|bd #<CR>
 " Close all buffers but current
 nnoremap <Leader>co :%bd<bar>e #<bar>bd #<CR><CR>
 
+" Cancel a search with Esc
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+
+" Replace all occurrences of word under cursor in the whole file
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" Find all occurrences of word under cursor in the project
+nnoremap <Leader>f :Ag <C-r><C-w><CR>
+
 " Abbreviations
 cnoreabbrev vr vertical resize
 cnoreabbrev ag Ag
@@ -251,12 +260,6 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 " Highlight trailing whitespaces
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
-
-" Cancel a search with Esc
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-
-" Replace all occurrences of word under cursor in the whole file
-nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Disable Ex Mode
 " https://vi.stackexchange.com/a/2692/11899
