@@ -10,6 +10,6 @@ alias spark="cd ~/.spark"
 alias C="cd ~/Code"
 
 # Work Projects
-alias CA="cd ~/Code/CrashAnalytics/crashanalytics/ui"
-alias KAS="cd ~/Code/KingAppStore/mbdl/ui"
+alias CA="cd ~/Code/crashanalytics/ui"
+alias KAS="cd ~/Code/mbdl/ui"
 alias D="cd ~/Code/tools-docker/"
