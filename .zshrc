@@ -1,6 +1,9 @@
 # Export path
 export PATH=/usr/local/bin:$PATH
 
+# Set locale
+export LC_ALL=en_US.UTF-8
+
 # Define zim location
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 

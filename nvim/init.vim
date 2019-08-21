@@ -2,9 +2,6 @@
 " BASIC SETTINGS
 " -----------------------------------------------
 
-" Set nvim interface language to en_US
-language en_US
-
 " Enable syntax highlight
 syntax enable
 
@@ -113,6 +110,9 @@ Plug 'pangloss/vim-javascript'
 " Syntax Highlight for Vue.js components
 Plug 'posva/vim-vue'
 
+" Vim plugin to toggle boolean values.
+Plug 'sagarrakshe/toggle-bool'
+
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
@@ -171,7 +171,7 @@ nnoremap <leader>i mzgg=G`z<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " Save on leaving Insert mode
-inoremap <Esc> <Esc>:w<CR>
+" inoremap <Esc> <Esc>:w<CR>
 
 " Close current buffer without losing split
 " http://stackoverflow.com/a/4468491/1534704
@@ -189,10 +189,13 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " Find all occurrences of word under cursor in the project
 nnoremap <Leader>f :Ag <C-r><C-w><CR>
 
+" Toggle booleans
+noremap ! :ToggleBool<CR>:w<CR>
+
 " Abbreviations
 cnoreabbrev vr vertical resize
 cnoreabbrev ag Ag
-cnoreabbrev W w
+cnoreabbrev W wa
 
 " Folding
 nnoremap <Space> za
@@ -211,6 +214,8 @@ nnoremap si( :?(?+,/)/-sort<CR>
 nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
 nnoremap <leader>O :setlocal nospell<CR>
 
+" Comment / Uncomment lines
+nnoremap // gcc
 
 " -----------------------------------------------
 " PLUGIN SETTINGS
