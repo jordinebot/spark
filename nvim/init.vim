@@ -102,7 +102,7 @@ Plug 'mxw/vim-jsx'
 
 " Intellisense engine for vim8 & neovim, full language server protocol support
 " as VSCode
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'
