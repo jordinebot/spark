@@ -215,7 +215,8 @@ nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
 nnoremap <leader>O :setlocal nospell<CR>
 
 " Comment / Uncomment lines
-nnoremap // gcc
+nnoremap // :Commentary<CR>
+vnoremap // :Commentary<CR>
 
 " -----------------------------------------------
 " PLUGIN SETTINGS
