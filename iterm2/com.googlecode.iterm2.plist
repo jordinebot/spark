@@ -21,7 +21,7 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideTab</key>
-	<true/>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>JobName</key>
@@ -80,9 +80,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>75 549 918 452 0 0 1920 1200 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>2323 270 592 584 1920 0 1920 1177 </string>
+	<string>330 202 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2885 0 955 1177 1920 0 1920 1177 </string>
+	<string>0 0 570 429 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -313,6 +313,8 @@
 			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Use Transparency</key>
+			<false/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1313,8 +1315,17 @@
 		<string>3.3.2</string>
 		<string>3.2.9</string>
 		<string>3.3.1</string>
+		<string>3.3.3beta2</string>
 		<string>3.3.0</string>
+		<string>3.3.4beta1</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{1920, 0}, {1920, 1200}}</string>
+		<key>topLeft</key>
+		<string>{2577, 1029}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
@@ -1329,7 +1340,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C3031B50-C2CE-49F6-8033-386422DDD206</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>22</integer>
+	<integer>25</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2094,11 +2105,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-02T12:15:59Z</date>
+	<date>2019-09-16T07:17:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -2116,7 +2127,7 @@
 	<key>TmuxUsesDedicatedProfile</key>
 	<true/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1567425792</real>
+	<real>1568490880</real>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseMetal</key>
@@ -2130,7 +2141,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.2</string>
+	<string>3.3.4beta1</string>
 	<key>metalMaximizeThroughput</key>
 	<false/>
 </dict>
