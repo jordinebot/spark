@@ -1,3 +1,5 @@
+ret
+fun
 switch
 html
 style
@@ -7,4 +9,3 @@ proto
 modeline
 value
 AGPL
-ret
