@@ -10,13 +10,11 @@ alias spark="cd ~/.spark"
 alias C="cd ~/Code"
 
 # Work Projects
-alias CA="cd ~/Code/crashanalytics/ui"
-alias KAS="cd ~/Code/mbdl/ui"
-alias D="cd ~/Code/tools-docker/"
+alias i="cd ~/Code/igloo/"
+alias lo="cd ~/Code/live-ops"
 
 # Git Aliases
 g=git
-g..='cd "$(git-root || print .)"'
 gCO='gCo $(gCl)'
 gCT='gCt $(gCl)'
 gCa='git add $(gCl)'
