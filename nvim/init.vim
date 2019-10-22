@@ -52,7 +52,9 @@ set noswapfile
 " system's clipboard by default
 set clipboard=unnamedplus
 
-
+" Enable mouse scroll and select
+" https://stackoverflow.com/a/33358103/1534704
+set mouse=a
 " -----------------------------------------------
 " MY PLUGINS
 " -----------------------------------------------
