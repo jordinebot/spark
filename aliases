@@ -11,7 +11,7 @@ alias C="cd ~/Code"
 
 # Work Projects
 alias i="cd ~/Code/igloo/"
-alias lo="cd ~/Code/live-ops"
+alias lo="cd ~/Code/live-ops/portal-app-ui/packages/app-ui"
 alias po="cd ~/Code/portal/ui"
 
 # Git Aliases
