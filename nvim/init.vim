@@ -148,6 +148,8 @@ Plug 'udalov/kotlin-vim'
 " Initialize plugin system
 call plug#end()
 
+" Set system node as version to use
+let g:coc_node_path = "/usr/local/bin/node"
 
 " -----------------------------------------------
 " MY KEYBINDINGS
