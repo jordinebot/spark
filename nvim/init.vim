@@ -133,6 +133,7 @@ Plug 'tpope/vim-surround'
 
 " Status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Asynchronous linting/fixing for Vim
 Plug 'w0rp/ale'
@@ -140,6 +141,9 @@ Plug 'w0rp/ale'
 " Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+
+" Goto definition plugin for React JS written in Python
+Plug 'Ivo-Donchev/vim-react-goto-definition'
 
 "Vim script for automatically detecting indent settings
 Plug 'ciaranm/detectindent'
@@ -222,6 +226,9 @@ nnoremap <leader>O :setlocal nospell<CR>
 nnoremap // :Commentary<CR>
 vnoremap // :Commentary<CR>
 
+" ReactGotoDef
+noremap <leader>m :call ReactGotoDef()<CR>zz
+
 " -----------------------------------------------
 " PLUGIN SETTINGS
 " -----------------------------------------------
@@ -250,11 +257,14 @@ nnoremap <C-p> :FuzzyOpen<CR>
 
 " coc.nvim integration with airline
 "if you want to disable auto detect, comment out those two lines
-"let g:airline#extensions#disable_rtp_load = 1
-"let g:airline_extensions = ['branch', 'hunks', 'coc']
+" let g:airline#extensions#disable_rtp_load = 1
+" let g:airline_extensions = ['branch', 'hunks', 'coc']
 
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+
+" Show Airline arrows
+let g:airline_powerline_fonts = 1
 
 " Use Prettier keybinding for Code formatter
 nnoremap <Leader>p :ALEFix<CR>
@@ -286,6 +296,8 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
+" Set airline theme
+let g:airline_theme='dark'
 
 " -----------------------------------------------
 " AUTOMATIC ACTIONS
@@ -362,6 +374,7 @@ map <right> <C-w><right>
 nnoremap <A-+> :vertical resize +10<CR>
 nnoremap <A--> :vertical resize -10<CR>
 
+nnoremap <C-s> :vsplit<CR>
 
 " -----------------------------------------------
 " FILE FORMAT OPTIONS
