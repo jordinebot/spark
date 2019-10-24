@@ -5,27 +5,11 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/spark/it
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
-# Install ZIM
-if [ ! -d ${ZDOTDIR:-${HOME}}/.zim ]
-then
-    git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
-
-    setopt EXTENDED_GLOB
-    for template_file ( ${ZDOTDIR:-${HOME}}/.zim/templates/* ); do
-      user_file="${ZDOTDIR:-${HOME}}/.${template_file:t}"
-      touch ${user_file}
-      ( print -rn "$(<${template_file})$(<${user_file})" >! ${user_file} ) 2>/dev/null
-    done
-
-    source ${ZDOTDIR:-${HOME}}/.zlogin
-    chsh -s $(which zsh)
-fi
+# Install Oh-my-ZSH
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Link shell config files
-
 ln -sf ~/.spark/.zshrc ~/.zshrc
-ln -sf ~/.spark/.zimrc ~/.zimrc
-ln -sf ~/.spark/.zlogin ~/.zlogin
 
 # Link git config
 ln -sf ~/.spark/.gitconfig_global ~/.gitconfig

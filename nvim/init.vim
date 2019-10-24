@@ -62,14 +62,15 @@ set mouse=a
 " Automatically install vim-plug if missing
 if empty(glob('~/.spark/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.spark/nvim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Specify a directory for plugins
 call plug#begin('~/.spark/nvim/plugged')
 
-" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+" A Vim plugin which shows a git diff in the gutter (sign column) and
+" stages/undoes hunks.
 Plug 'airblade/vim-gitgutter'
 
 " Fuzzy file finding for neovim
@@ -290,7 +291,6 @@ nnoremap Q <Nop>
 " THEME AND VISUAL SETTINGS
 " -----------------------------------------------
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:vim_monokai_tasty_italic = 1
 colorscheme vim-monokai-tasty
 if (has("termguicolors"))
     set termguicolors
