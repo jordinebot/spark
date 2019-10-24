@@ -74,15 +74,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>2680 786 400 129 1920 0 1920 1177 </string>
+	<string>2680 803 400 129 1920 0 1920 1200 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>2570 588 620 392 1920 0 1920 1177 </string>
+	<string>2570 606 620 392 1920 0 1920 1200 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>75 549 918 452 0 0 1920 1200 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>330 202 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 570 417 0 0 1680 1050 </string>
+	<string>1920 0 570 417 1920 0 1920 1200 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -890,7 +890,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>3.7064740640862945</real>
+			<real>2.4792175602791877</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1286,7 +1286,7 @@
 			<key>Normal Font</key>
 			<string>NotoMonoForPowerline 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
-			<false/>
+			<true/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prevent Opening in a Tab</key>
@@ -1334,7 +1334,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.1722120875634518</real>
+			<real>0.1785116592639594</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1364,16 +1364,14 @@
 		<string>3.3.5beta3</string>
 		<string>3.3.7beta1</string>
 		<string>3.3.5beta2</string>
-		<string>3.2.9</string>
 		<string>3.3.0</string>
 		<string>3.3.5beta1</string>
+		<string>3.2.9</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Monaco</string>
 		<string>Noto Mono for Powerline</string>
-		<string>Go Mono for Powerline</string>
-		<string>Droid Sans Mono for Powerline</string>
+		<string>Hack Nerd Font</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -1385,9 +1383,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{1920, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{269, 595}</string>
+		<string>{1960, 812}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1396,7 +1394,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C3031B50-C2CE-49F6-8033-386422DDD206</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>44</integer>
+	<integer>46</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2182,11 +2180,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-22T07:54:37Z</date>
+	<date>2019-10-24T13:02:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
