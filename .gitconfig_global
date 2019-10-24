@@ -4,6 +4,7 @@
     email = jordi.nebot@king.com
 [core]
     excludesfile = ~/.gitignore
+    pager = less -F -X
 [alias]
     # (Add All) Stages all untracked and modified files
     aa = add --all
