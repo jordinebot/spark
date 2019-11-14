@@ -198,6 +198,11 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " Find all occurrences of word under cursor in the project
 nnoremap <Leader>f :Ag <C-r><C-w><CR>
 
+" Console.log word under cursor as variable
+" nnoremap <silent><Leader>L :put! =printf('console.log(''%s:'',  %s);', expand('<cword>'), expand('<cword>'))<CR><Esc>==
+nnoremap <silent><Leader>L "ayiwOconsole.log('<C-R>a:', <C-R>a);<Esc>
+nnoremap <silent><Leader>l "ayiwoconsole.log('<C-R>a:', <C-R>a);<Esc>
+
 " Toggle booleans
 noremap ! :ToggleBool<CR>:w<CR>
 
@@ -217,6 +222,7 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap siB :?{?+,/}/-sort<CR>
 nnoremap si{ :?{?+,/}/-sort<CR>
 nnoremap si( :?(?+,/)/-sort<CR>
+nnoremap si[ :?[?+,/]/-sort<CR>
 
 " Enable/Disable spell check for current buffer
 " ]s next, [s previous, z= suggestions, zg add word
