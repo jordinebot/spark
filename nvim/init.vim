@@ -18,10 +18,13 @@ set cursorline
 set colorcolumn=80,120
 
 " Default Tabs & Indent
-set tabstop=2       " spaces per TAB
-set shiftwidth=2    " spaces per TAB for autoindent
-set softtabstop=2   " spaces per TAB when editing
-set expandtab       " TAB with spaces
+set tabstop=4       " spaces per TAB
+set shiftwidth=4    " spaces per TAB for autoindent
+set softtabstop=4   " spaces per TAB when editing
+
+" set expandtab       " Indent with spaces
+set noexpandtab     " Indent with TAB
+
 set autoindent
 set copyindent      " copy indent from the previous line
 set nowrap          " By default, don't wrap long lines
@@ -85,9 +88,6 @@ Plug 'editorconfig/editorconfig-vim'
 " Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
 
-" A simple, easy-to-use Vim alignment plugin.
-Plug 'junegunn/vim-easy-align'
-
 " Text objects for the current line
 Plug 'kana/vim-textobj-line'
 
@@ -119,6 +119,9 @@ Plug 'sagarrakshe/toggle-bool'
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
+" A plugin of NERDTree showing git status
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " Vim Syntax for SCSS (Sassy CSS)
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
@@ -145,9 +148,6 @@ Plug 'peitalin/vim-jsx-typescript'
 
 " Goto definition plugin for React JS written in Python
 Plug 'Ivo-Donchev/vim-react-goto-definition'
-
-"Vim script for automatically detecting indent settings
-Plug 'ciaranm/detectindent'
 
 " Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
 Plug 'udalov/kotlin-vim'
@@ -198,6 +198,11 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " Find all occurrences of word under cursor in the project
 nnoremap <Leader>f :Ag <C-r><C-w><CR>
 
+" Console.log word under cursor as variable
+" nnoremap <silent><Leader>L :put! =printf('console.log(''%s:'',  %s);', expand('<cword>'), expand('<cword>'))<CR><Esc>==
+nnoremap <silent><Leader>L "ayiwOconsole.log('<C-R>a:', <C-R>a);<Esc>
+nnoremap <silent><Leader>l "ayiwoconsole.log('<C-R>a:', <C-R>a);<Esc>
+
 " Toggle booleans
 noremap ! :ToggleBool<CR>:w<CR>
 
@@ -217,6 +222,7 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap siB :?{?+,/}/-sort<CR>
 nnoremap si{ :?{?+,/}/-sort<CR>
 nnoremap si( :?(?+,/)/-sort<CR>
+nnoremap si[ :?[?+,/]/-sort<CR>
 
 " Enable/Disable spell check for current buffer
 " ]s next, [s previous, z= suggestions, zg add word
@@ -243,6 +249,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['node_modules', '.git$', 'tmp$', '.DS_Store']
+let g:NERDTreeWinSize=45
 
 " Use another Emmet Leader key
 let g:user_emmet_leader_key=','
@@ -261,11 +268,8 @@ nnoremap <C-p> :FuzzyOpen<CR>
 " let g:airline#extensions#disable_rtp_load = 1
 " let g:airline_extensions = ['branch', 'hunks', 'coc']
 
-let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
-
-" Show Airline arrows
-let g:airline_powerline_fonts = 1
+" let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+" let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " Use Prettier keybinding for Code formatter
 nnoremap <Leader>p :ALEFix<CR>
@@ -299,6 +303,9 @@ endif
 " Set airline theme
 let g:airline_theme='dark'
 
+" Show Airline arrows
+let g:airline_powerline_fonts = 1
+
 " -----------------------------------------------
 " AUTOMATIC ACTIONS
 " -----------------------------------------------
@@ -315,9 +322,6 @@ au BufRead,BufNewFile *.md,*.wiki setlocal formatoptions+=t
 " Trigger autoread when changing buffers or coming back to vim.
 " Useful after `git checkout --` on external terminal.
 au FocusGained,BufEnter * :silent! !
-
-" Auto detect indentation when opening a new buffer
-autocmd BufReadPost * :DetectIndent
 
 " Workaround 'Insert <Paste>' bug in Neovim
 " See https://github.com/neovim/neovim/issues/7994#issuecomment-388296360
@@ -398,6 +402,6 @@ let g:ale_fixers = {
       \  'typescript': ['prettier'],
 \ }
 
-let g:ale_javascript_prettier_options = '--single-quote --print-width 120'
+let g:ale_javascript_prettier_options = '--single-quote --print-width 80 --tab-width 4 --use-tabs true'
 
 let g:ale_fix_on_save = 0
