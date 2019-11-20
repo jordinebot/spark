@@ -6,27 +6,27 @@
 1. Run **Terminal**
 
 1. Install **[Homebrew](https://brew.sh)** and tap versions
-   
+
     ```sh
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew tap homebrew/cask-versions
     ```
-    
+
 ## SSH Keys
-    
-1. Install security apps and sync `~/.ssh` 
+
+1. Install security apps and sync `~/.ssh`
 
     ```sh
     brew cask install bitwarden tresorit nordvpn
     ```
 
     Consider downloading these critical packages from owner's website:
-    
+
     * https://bitwarden.com/#download
     * https://tresorit.com/download/mac
     * https://nordvpn.com/download/
-    
-    
+
+
 1. Set key permissions
 
     ```sh
@@ -42,21 +42,22 @@
 
 ## Setup git
 1. Install latest **[git](https://git-scm.com/)**
-    
+
     ```sh
     brew install git
     ```
-    
+
 1. Clone **spark**
 
     ```sh
     git clone git@github.com:jordinebot/spark.git ~/.spark
     ```
-    
-1. Install latest **[zsh](http://zsh.sourceforge.net)**
+
+1. Install latest **[zsh](http://zsh.sourceforge.net)** and set it as default shell
 
     ```sh
     brew install zsh
+    chsh -s /bin/zsh
     ```
 
 1. Install **[iTerm](https://iterm2.com/)**
@@ -72,7 +73,7 @@
     chmod +x ~/.spark/spark.sh
     ~/.spark/spark.sh
     ```
-    
+
 # CoC Extensions
 
     :CocInstall coc-html coc-css coc-json coc-highlight coc-snippets
