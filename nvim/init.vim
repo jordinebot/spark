@@ -15,7 +15,7 @@ set showcmd
 set cursorline
 
 " Show ruler on columns 80 & 120
-set colorcolumn=80,120
+set colorcolumn=80,100,120
 
 " Default Tabs & Indent
 set tabstop=4       " spaces per TAB
@@ -139,15 +139,12 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Asynchronous linting/fixing for Vim
-Plug 'w0rp/ale'
+" Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
+Plug 'dense-analysis/ale'
 
 " Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-
-" Goto definition plugin for React JS written in Python
-Plug 'Ivo-Donchev/vim-react-goto-definition'
 
 " Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
 Plug 'udalov/kotlin-vim'
@@ -157,6 +154,40 @@ call plug#end()
 
 " Set system node as version to use
 let g:coc_node_path = "/usr/local/bin/node"
+
+" -----------------------------------------------
+" PLUGIN SETTINGS
+" -----------------------------------------------
+
+" Set path for python (required by ultisnips)
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+" Enable deoplete (for local autocompletion) on startup
+" let g:deoplete#enable_at_startup = 1
+
+" Hide some files in NERDTree
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['node_modules', '.git$', 'tmp$', '.DS_Store']
+let g:NERDTreeWinSize=45
+
+" Use another Emmet Leader key
+let g:user_emmet_leader_key=','
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Use fzy as CtrlP
+nnoremap <C-p> :FuzzyOpen<CR>
+
+" Set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+
+" Setup CoC Prettier extension
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 
 " -----------------------------------------------
 " MY KEYBINDINGS
@@ -174,7 +205,7 @@ inoremap jj <Esc>j
 inoremap kk <Esc>k
 
 " Reindent
-nnoremap <leader>i mzgg=G`z<CR>
+nnoremap <Leader>i mzgg=G`z<CR>
 
 " Toggle NERDtree
 map <C-n> :NERDTreeToggle<CR>
@@ -226,56 +257,24 @@ nnoremap si[ :?[?+,/]/-sort<CR>
 
 " Enable/Disable spell check for current buffer
 " ]s next, [s previous, z= suggestions, zg add word
-nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
-nnoremap <leader>O :setlocal nospell<CR>
+nnoremap <Leader>o :setlocal spell spelllang=en_us<CR>
+nnoremap <Leader>O :setlocal nospell<CR>
 
 " Comment / Uncomment lines
 nnoremap // :Commentary<CR>
 vnoremap // :Commentary<CR>
 
-" ReactGotoDef
-noremap <leader>m :call ReactGotoDef()<CR>zz
+" Go to Definition
+noremap <Leader>m :ALEGoToDefinition<CR>zz
 
-" -----------------------------------------------
-" PLUGIN SETTINGS
-" -----------------------------------------------
+" Show method signature
+nnoremap <Leader>d :ALEHover<CR>
 
-" Set path for python (required by ultisnips)
-let g:python3_host_prog = '/usr/local/bin/python3'
+" Apply prettier to selected range
+vmap <Leader>p <Plug>(coc-format-selected)
+nmap <Leader>p :Prettier<CR>
 
-" Enable deoplete (for local autocompletion) on startup
-" let g:deoplete#enable_at_startup = 1
-
-" Hide some files in NERDTree
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['node_modules', '.git$', 'tmp$', '.DS_Store']
-let g:NERDTreeWinSize=45
-
-" Use another Emmet Leader key
-let g:user_emmet_leader_key=','
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" Use fzy as CtrlP
-nnoremap <C-p> :FuzzyOpen<CR>
-
-" coc.nvim integration with airline
-"if you want to disable auto detect, comment out those two lines
-" let g:airline#extensions#disable_rtp_load = 1
-" let g:airline_extensions = ['branch', 'hunks', 'coc']
-
-" let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-" let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
-
-" Use Prettier keybinding for Code formatter
-nnoremap <Leader>p :ALEFix<CR>
-
-" Set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+let g:prettier#config#config_precedence = 'file-override'
 
 
 " -----------------------------------------------
@@ -380,28 +379,3 @@ nnoremap <A--> :vertical resize -10<CR>
 
 nnoremap <C-s> :vsplit<CR>
 
-" -----------------------------------------------
-" FILE FORMAT OPTIONS
-" -----------------------------------------------
-
-let g:ale_linters = {
-      \  'javascript': ['eslint'],
-\ }
-
-let g:ale_fixers = {
-      \  'css': ['prettier'],
-      \  'flow': ['prettier'],
-      \  'graphql': ['prettier'],
-      \  'html': ['prettier'],
-      \  'javascript': ['prettier', 'eslint'],
-      \  'json': ['prettier'],
-      \  'jsx': ['prettier', 'eslint'],
-      \  'less': ['prettier'],
-      \  'markdown': ['prettier'],
-      \  'scss': ['prettier'],
-      \  'typescript': ['prettier'],
-\ }
-
-let g:ale_javascript_prettier_options = '--single-quote --print-width 80 --tab-width 4 --use-tabs true'
-
-let g:ale_fix_on_save = 0

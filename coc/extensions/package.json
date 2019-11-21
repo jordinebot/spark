@@ -1,9 +1,12 @@
 {
   "dependencies": {
     "coc-css": "^1.2.2",
+    "coc-eslint": ">=1.2.3",
     "coc-highlight": ">=1.2.5",
     "coc-html": "^1.2.1",
     "coc-json": ">=1.2.4",
+    "coc-prettier": ">=1.1.10",
     "coc-snippets": ">=2.1.13"
   }
 }
+

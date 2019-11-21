@@ -9,11 +9,12 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Link shell config files
-ln -sf ~/.spark/.zshrc ~/.zshrc
+ln -sf ~/.spark/zshrc ~/.zshrc
 
 # Link git config
-ln -sf ~/.spark/.gitconfig_global ~/.gitconfig
-ln -sf ~/.spark/.gitignore_global ~/.gitignore
+ln -sf ~/.spark/gitconfig_global ~/.gitconfig
+ln -sf ~/.spark/gitignore_global ~/.gitignore
+ln -sf ~/.spark/prettierignore_global ~/.prettierignore
 
 # Install NeoVim
 brew list --versions neovim || (\
