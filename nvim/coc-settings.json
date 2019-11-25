@@ -16,5 +16,5 @@
     "less"
   ],
   "prettier.disableSuccessMessage": true,
-  "prettier.ignorePath": "/Users/jordi.nebot/.spark/.prettierignore"
+  "prettier.ignorePath": "/Users/jordi.nebot/.prettierignore"
 }
