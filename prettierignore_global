@@ -3,3 +3,4 @@ package-lock.json
 eslint.json
 tslint.json
 tsconfig.json
+lerna.json
