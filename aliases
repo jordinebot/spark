@@ -10,6 +10,6 @@ alias spark="cd ~/.spark"
 alias C="cd ~/Code"
 
 # Work Projects
-alias i="cd ~/Code/igloo/"
-alias lo="cd ~/Code/live-ops/portal-app-ui/packages/app-ui"
-alias po="cd ~/Code/portal/ui"
+alias lo="cd ~/Code/live-ops/"
+alias po="cd ~/Code/live-ops/portal-app-ui/"
+alias ui="cd ~/Code/live-ops/portal-app-ui/packages/app-ui"
