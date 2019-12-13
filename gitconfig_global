@@ -46,6 +46,8 @@
     rt = read-tree -u --reset
     # (Stash Apply) Apply a specific stash
     sa = stash apply
+    # (Stash Drop) Drop a specific stash
+    sd = stash drop
     # (Stash pUsh) Stash working directory changes with custom message
     su = stash push --include-untracked -m
     # (Stash pOp) Apply and drop stash
