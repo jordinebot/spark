@@ -107,3 +107,5 @@ bindkey -v
 
 # Auto NVM use when changing folders
 source ~/.spark/auto-nvm.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

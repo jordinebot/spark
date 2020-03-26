@@ -1,20 +1,14 @@
 {
   "suggest.noselect": false,
   "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "js",
+    "css",
+    "json",
     "jsx",
+    "less",
     "ts",
     "tsx",
-    "json",
-    "css",
-    "scss",
-    "sass",
-    "less"
+    "typescript",
+    "typescriptreact"
   ],
-  "prettier.disableSuccessMessage": true,
-  "prettier.ignorePath": "/Users/jordi.nebot/.prettierignore"
+  "prettier.disableSuccessMessage": true
 }

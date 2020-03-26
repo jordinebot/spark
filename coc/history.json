@@ -10,5 +10,15 @@
         "sour"
       ]
     }
+  },
+  "commands": {
+    "%2FUsers%2Fjordi": {
+      "nebot%2FCode%2Flive-ops": [
+        "eslint"
+      ],
+      "nebot%2FCode%2Flive-ops%2Fportal-app-ui": [
+        "es"
+      ]
+    }
   }
 }

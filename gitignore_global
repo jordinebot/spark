@@ -14,6 +14,9 @@ Icon?
 # -------------
 node_modules
 bower_components
+tags.lock
+tags.temp
+tags
 
 # -------------
 # Config files

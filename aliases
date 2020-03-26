@@ -4,12 +4,20 @@ alias neovim="nvim"
 
 # Git composed aliases
 alias pull="git fetch && git pull"
+alias push="git push || fuck"
 
 # Environment
 alias spark="cd ~/.spark"
 alias C="cd ~/Code"
 
 # Work Projects
-alias lo="cd ~/Code/live-ops/"
-alias po="cd ~/Code/live-ops/portal-app-ui/"
-alias ui="cd ~/Code/live-ops/portal-app-ui/packages/app-ui"
+LIVEOPS="~/Code/live-ops"
+PACKAGES="$LIVEOPS/portal-app-ui/packages"
+
+alias lo="cd $LIVEOPS"
+alias po="cd $LIVEOPS/portal-app-ui"
+alias pro="cd $PACKAGES/provider"
+alias ui="cd $PACKAGES/app-ui"
+alias sdk="cd $PACKAGES/sdk"
+alias down="cd $LIVEOPS && docker-compose down"
+alias up="cd $LIVEOPS && docker-compose -f docker-compose-ui.yml up -d"

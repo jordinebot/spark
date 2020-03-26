@@ -1,1 +1,2 @@
 prettier.formatFile
+eslint.executeAutofix

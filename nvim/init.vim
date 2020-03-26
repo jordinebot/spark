@@ -3,7 +3,7 @@
 " -----------------------------------------------
 
 " Enable syntax highlight
-syntax enable
+syntax on
 
 " Show line numbers
 set number
@@ -17,6 +17,9 @@ set cursorline
 " Show ruler on columns 80 & 120
 set colorcolumn=80,100,120
 
+" Always show signcolumns
+set signcolumn=yes
+
 " Default Tabs & Indent
 set tabstop=4       " spaces per TAB
 set shiftwidth=4    " spaces per TAB for autoindent
@@ -25,15 +28,19 @@ set softtabstop=4   " spaces per TAB when editing
 " set expandtab       " Indent with spaces
 set noexpandtab     " Indent with TAB
 
-set autoindent
-set copyindent      " copy indent from the previous line
-set nowrap          " By default, don't wrap long lines
+" Don't wrap long lines
+set nowrap
 
 " Make searching case insensitive
 set ignorecase
 
 " ... unless the query has capital letters.
 set smartcase
+
+" Indentation
+set autoindent
+set cindent
+set smarttab
 
 " Autodetect file types on buffer opening and
 " enable specific indentation and plugins
@@ -49,6 +56,7 @@ set splitright          " Vertical split to right of current.
 " Don't store backups or swap files since important files are
 " always git tracked (also I save too often)
 set nobackup
+set nowritebackup
 set noswapfile
 
 " Set + as the default register so that vim yanks and pastes to/from
@@ -80,7 +88,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'cloudhead/neovim-fuzzy'
 
 " Color highlighting theme
-Plug 'patstockwell/vim-monokai-tasty'
+Plug 'tomasr/molokai'
+Plug 'fmoralesc/molokayo'
 
 " EditorConfig plugin for Vim
 Plug 'editorconfig/editorconfig-vim'
@@ -109,9 +118,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'
-
-" Syntax Highlight for Vue.js components
-Plug 'posva/vim-vue'
 
 " Vim plugin to toggle boolean values.
 Plug 'sagarrakshe/toggle-bool'
@@ -146,9 +152,6 @@ Plug 'dense-analysis/ale'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
-" Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
-Plug 'udalov/kotlin-vim'
-
 " Initialize plugin system
 call plug#end()
 
@@ -161,9 +164,6 @@ let g:coc_node_path = "/usr/local/bin/node"
 
 " Set path for python (required by ultisnips)
 let g:python3_host_prog = '/usr/local/bin/python3'
-
-" Enable deoplete (for local autocompletion) on startup
-" let g:deoplete#enable_at_startup = 1
 
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
@@ -187,6 +187,15 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " Setup CoC Prettier extension
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Set tags path
+set tags=tags
+
+" https://github.com/ludovicchabant/vim-gutentags/issues/178
+let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
+
+" To know when Gutentags is generating tags, add this to your vimrc:
+set statusline+=%{gutentags#statusline()}
 
 
 " -----------------------------------------------
@@ -281,7 +290,7 @@ let g:prettier#config#config_precedence = 'file-override'
 " ADVANCED SETTINGS
 " -----------------------------------------------
 
-" Highlight trailing whitespaces
+" Highlight Trailing Whitespace
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
 
@@ -294,9 +303,9 @@ nnoremap Q <Nop>
 " THEME AND VISUAL SETTINGS
 " -----------------------------------------------
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme vim-monokai-tasty
+colorscheme molokayo
 if (has("termguicolors"))
-    set termguicolors
+	set termguicolors
 endif
 
 " Set airline theme
@@ -358,12 +367,6 @@ map <Leader>. :ls<CR>:b
 " Fast Next / Previous buffer
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
-
-" Split navigation
-nnoremap <A-h> <C-w><C-h>
-nnoremap <A-j> <C-w><C-j>
-nnoremap <A-k> <C-w><C-k>
-nnoremap <A-l> <C-w><C-l>
 
 " Split navigation with direction arrows
 " faster than A-* and it forces me to navigate
