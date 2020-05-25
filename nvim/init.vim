@@ -152,6 +152,15 @@ Plug 'dense-analysis/ale'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+" Vim syntax for TOML.
+Plug 'cespare/vim-toml'
+
+" Mustache and Handlebars mode for vim
+Plug 'mustache/vim-mustache-handlebars'
+
+" Syntax Highlight for Vue.js components
+Plug 'posva/vim-vue'
+
 " Initialize plugin system
 call plug#end()
 

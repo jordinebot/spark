@@ -10,5 +10,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "prettier.disableSuccessMessage": true
+  "prettier.disableSuccessMessage": true,
+  "prettier.singleQuote": false
 }

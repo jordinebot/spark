@@ -16,6 +16,10 @@ ln -sf ~/.spark/gitconfig_global ~/.gitconfig
 ln -sf ~/.spark/gitignore_global ~/.gitignore
 ln -sf ~/.spark/prettierignore_global ~/.prettierignore
 
+# Link tmux config
+ln -sf ~/.spark/tmux/ ~/.tmux
+ln -sf ~/.spark/tmux.conf ~/.tmux.conf
+
 # Install NeoVim
 brew list --versions neovim || (\
     brew install neovim && \

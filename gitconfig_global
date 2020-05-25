@@ -36,6 +36,10 @@
     lg = log --all --decorate --oneline --graph
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	# (Prunable List) Lists local branches that are "gone" from remote
+    pl = !git branch -vv | awk '/: gone]/{print $1}'
+	# (Prunable List Delete) Delete all local fully merged branches that don't have a remote tracker
+	pld = !git branch -vv | awk '/: gone]/{print $1}' | xargs -n1 git branch --delete
     # (Prune Origin) Remove all origin references in local repo for remotely deleted branches
     po = remote prune origin
     # (Push Track) Push branch and set upstream track

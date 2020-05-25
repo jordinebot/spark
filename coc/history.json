@@ -8,6 +8,9 @@
     "%2FUsers%2Fjordi": {
       "nebot%2FCode%2Flive-ops%2Fportal-app-ui": [
         "sour"
+      ],
+      "nebot%2FCode%2Fportal-counterpart-app": [
+        "q:q"
       ]
     }
   },
