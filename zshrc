@@ -106,6 +106,13 @@ eval $(thefuck --alias)
 bindkey -v
 
 # Auto NVM use when changing folders
-source ~/.spark/auto-nvm.sh
+# source ~/.spark/auto-nvm.sh
+eval "$(fnm env --version-file-strategy recursive --use-on-cd)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jordi.nebot/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jordi.nebot/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jordi.nebot/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jordi.nebot/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

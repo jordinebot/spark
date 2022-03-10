@@ -2,6 +2,9 @@
 alias v="nvim"
 alias neovim="nvim"
 
+# Use fnm instead of nvm
+alias nvm="fnm"
+
 # Git composed aliases
 alias pull="git fetch && git pull"
 alias push="git push || fuck"
@@ -11,15 +14,9 @@ alias spark="cd ~/.spark"
 alias C="cd ~/Code"
 
 # Work Projects
-LIVEOPS="~/Code/live-ops"
-PACKAGES="$LIVEOPS/portal-app-ui/packages"
+CBUILDER="~/Code/stereotype-manager-ui"
+AMANAGER="~/Code/gom-composer-ui"
 
-alias lo="cd $LIVEOPS"
-alias po="cd $LIVEOPS/portal-app-ui"
-alias pro="cd $PACKAGES/provider"
-alias sdk="cd $PACKAGES/sdk"
-alias sm="cd ~/Code/stereotype-manager-ui"
-alias ui="cd $PACKAGES/app-ui"
-alias up="cd $LIVEOPS && docker-compose -f docker-compose-ui.yml up -d"
-alias down="cd $LIVEOPS && docker-compose down"
+alias p="cd $CBUILDER"
+alias gom="cd $AMANAGER"
 
