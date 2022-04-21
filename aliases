@@ -2,12 +2,18 @@
 alias v="nvim"
 alias neovim="nvim"
 
+# Tmux
+alias t="tmux"
+alias tw="tmux attach -t work || tmux new -s work"
+alias tn="tmux new -s"
+alias tk="tmux kill-session -t"
+
 # Use fnm instead of nvm
 alias nvm="fnm"
 
 # Git composed aliases
 alias pull="git fetch && git pull"
-alias push="git push || fuck"
+alias push="git push"
 
 # Environment
 alias spark="cd ~/.spark"
