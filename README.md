@@ -9,6 +9,7 @@
 
     ```sh
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
     brew tap homebrew/cask-versions
     ```
 
@@ -17,14 +18,13 @@
 1. Install security apps and sync `~/.ssh`
 
     ```sh
-    brew cask install bitwarden tresorit nordvpn
+    brew cask install bitwarden tresorit
     ```
 
     Consider downloading these critical packages from owner's website:
 
     * https://bitwarden.com/#download
     * https://tresorit.com/download/mac
-    * https://nordvpn.com/download/
 
 
 1. Set key permissions
@@ -33,7 +33,7 @@
     chmod 700 ~/.ssh && chmod 644 ~/.ssh/* && chmod 400 ~/.ssh/id_rsa ~/.ssh/*.pem
     ```
 
-1. Add keys to `ssh-agent` (`--apple-use-keychain` replaces `-K` to store passphrase into System's Keychain)
+1. Add keys to `ssh-agent` (`--apple-use-keychain` to store passphrase into System's Keychain)
 
     ```sh
     eval "$(ssh-agent -s)"
@@ -73,7 +73,3 @@
     chmod +x ~/.spark/spark.sh
     ~/.spark/spark.sh
     ```
-
-# CoC Extensions
-
-    :CocInstall coc-html coc-css coc-json coc-highlight coc-snippets
