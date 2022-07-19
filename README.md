@@ -1,4 +1,4 @@
-# spark
+# spark ⚡️
 **Spark** is a script to setup the minimal configuration that I want in my OSX.
 
 ## Basics
