@@ -33,11 +33,11 @@
     chmod 700 ~/.ssh && chmod 644 ~/.ssh/* && chmod 400 ~/.ssh/id_rsa ~/.ssh/*.pem
     ```
 
-1. Add keys to `ssh-agent` (`-K` to store passphrase into System's Keychain)
+1. Add keys to `ssh-agent` (`--apple-use-keychain` replaces `-K` to store passphrase into System's Keychain)
 
     ```sh
     eval "$(ssh-agent -s)"
-    ssh-add -K ~/.ssh/id_rsa
+    ssh-add --apple-use-keychain ~/.ssh/id_rsa
     ```
 
 ## Setup git
