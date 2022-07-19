@@ -77,6 +77,5 @@
 ## Setup iTerm2
 For the desired Varmilo with tmux configuration:
 - Preferences > Profile > Default > Keys > Left option key as Esc+, Right option key as Normal
-- Preferences > Keys > Remap modifiers > Remap left option to right option, Remap right option to left option
 - Set Varmilo to Mac mode with Fn+A until CAPS LOCK blinks three times
 - Set Varmilo to default with Fn+Esc until CAPS LOCK blinks three times
