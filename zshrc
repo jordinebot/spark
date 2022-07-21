@@ -73,7 +73,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm zsh-autosuggestions history-substring-search)
+plugins=(git zsh-autosuggestions history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,9 +98,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.spark/aliases
-
-# Enable the fuck
-eval $(thefuck --alias)
 
 # Use vi keybindings in CLI
 bindkey -v
