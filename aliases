@@ -17,6 +17,7 @@ alias nvm="fnm"
 # Git composed aliases
 alias pull="git fetch && git pull"
 alias push="git push"
+alias main="git checkout main && git pull"
 
 # Environment
 alias spark="cd ~/.spark"
@@ -25,7 +26,10 @@ alias C="cd ~/Code"
 # Work Projects
 CBUILDER="~/Code/stereotype-manager-ui"
 AMANAGER="~/Code/gom-composer-ui"
+FLIFECYCLE="~/Code/feature-lifecycle-fe"
+GPLUGIN="~/Code/gamepluginfe"
 
 alias p="cd $CBUILDER"
 alias gom="cd $AMANAGER"
-
+alias fl="cd $FLIFECYCLE"
+alias gp="cd $GPLUGIN"

@@ -68,3 +68,7 @@
     tp = push --tags
     # (UNstage) Remove files from stage
     un = reset
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
