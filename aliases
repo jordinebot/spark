@@ -17,7 +17,11 @@ alias nvm="fnm"
 # Git composed aliases
 alias pull="git fetch && git pull"
 alias push="git push"
-alias main="git checkout main && git pull"
+alias main="git checkout main && git pull && fnm use"
+alias v2="git checkout v2.x && git pull && fnm use"
+alias v3="git checkout v3.x && git pull && fnm use"
+alias phoenix="fnm use && rm -rf package-lock.json node_modules && npm install"
+
 
 # Environment
 alias spark="cd ~/.spark"
